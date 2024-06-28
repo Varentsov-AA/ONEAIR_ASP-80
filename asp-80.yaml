@@ -14,8 +14,8 @@ substitutions:
 
 packages:
   tion:
-    url: https://github.com/dentra/esphome-tion
-    ref: 2024.1.3 # cant use substitutions here
+    url: https://github.com/Varentsov-AA/ONEAIR_ASP-80
+    ref: 2024.6.1 # cant use substitutions here
     files:
       ## Enable additional WiFi signal sensor. Comment next line to disable.
       - packages/wifi_signal.yaml
