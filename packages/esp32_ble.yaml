@@ -1,0 +1,30 @@
+substitutions:
+  board: esp32dev
+
+esphome:
+  platformio_options:
+    build_flags:
+      - -std=gnu++17
+    build_unflags:
+      - -std=gnu++11
+
+esp32:
+  board: $board
+  framework:
+    type: esp-idf
+
+wifi:
+  power_save_mode: light
+
+esp32_ble_tracker:
+  id: tion_esp32_ble_tracker
+
+ble_client:
+  mac_address: $tion_mac_address
+  id: tion_ble_client
+
+ota:
+  on_begin:
+    then:
+      lambda: |-
+        id(tion_ble_client).set_enabled(false);
